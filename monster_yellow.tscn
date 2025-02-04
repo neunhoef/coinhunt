@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5edapmq266ih"]
+
+[ext_resource type="Texture2D" uid="uid://c2nb8ielaj00h" path="res://art/gelbes_monster.png" id="1_i7bek"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pl4y2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i7bek")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f2tcn"]
+radius = 30.0
+height = 66.0
+
+[node name="MonsterYellow" type="Area2D"]
+scale = Vector2(1.1, 1.1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_pl4y2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_f2tcn")
